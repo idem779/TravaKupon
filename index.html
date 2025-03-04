@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: url('https://github.com/idem779/TravaKupon/raw/main/kupon.jpg') no-repeat center center/cover; /* Фон с купоном, заполняющий экран */
+            background: #7a9254; /* Основной цвет салона как фон всей страницы */
             min-height: 100vh; /* Заполняем весь экран по высоте */
             width: 100%; /* Заполняем весь экран по ширине */
             display: flex;
@@ -29,6 +29,9 @@
             max-width: 90%; /* Ограничение для больших экранов, но не слишком строгое */
             padding: 20px; /* Минимальные отступы */
             text-align: center;
+            background: rgba(255, 255, 255, 0.1); /* Лёгкий белый фон для контраста с основным фоном */
+            border-radius: 15px; /* Скругление для современного вида */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень для 3D-эффекта */
             animation: fadeIn 1.5s ease-in-out;
         }
 
@@ -36,8 +39,16 @@
             width: 100%; /* Логотип занимает всю доступную ширину */
             max-width: 300px; /* Ограничение для больших экранов */
             margin-bottom: 30px; /* Отступ снизу для логотипа */
-            border-radius: 10px;
-            object-fit: contain; /* Сохраняем пропорции изображения */
+            border-radius: 50%; /* Делаем логотип круглым */
+            object-fit: cover; /* Обрезаем изображение, чтобы оно помещалось в круг */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(255, 255, 255, 0.2); /* 3D-эффект с обводкой */
+            transform: translateZ(10px); /* Лёгкий 3D-эффект */
+            transition: transform 0.3s, box-shadow 0.3s; /* Анимация при наведении */
+        }
+
+        .logo:hover {
+            transform: translateZ(15px); /* Увеличение 3D-эффекта при наведении */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4), 0 0 0 12px rgba(255, 255, 255, 0.3);
         }
 
         h1 {
@@ -116,7 +127,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://github.com/idem779/TravaKupon/raw/main/TravaLogo.jpg" alt="Trava Beauty Bar Logo" class="logo"> <!-- Здесь вставлен логотип -->
+        <img src="https://raw.githubusercontent.com/idem779/TravaKupon/main/TravaLogo.jpg" alt="Trava Beauty Bar Logo" class="logo"> <!-- Логотип с правильной ссылкой -->
         <h1>Получите скидку 700 руб!</h1>
         <p>Нажмите кнопку ниже, чтобы написать "Купон" в WhatsApp и получить скидку на первые посещения.</p>
         <a href="https://wa.me/89383460201?text=Купон" class="btn" target="_blank">Получить скидку</a>
