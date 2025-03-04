@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трава Beauty Bar - Получите скидку 700 руб!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('kupon_trava.jpg') no-repeat center center/cover; /* Фон с купоном, заполняющий экран */
+            min-height: 100vh; /* Заполняем весь экран по высоте */
+            width: 100%; /* Заполняем весь экран по ширине */
+            display: flex;
+            flex-direction: column; /* Элементы располагаются вертикально */
+            justify-content: center; /* Центрируем по вертикали для полного заполнения экрана */
+            align-items: center; /* Центрируем по горизонтали */
+            color: white;
+            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+        }
+
+        .container {
+            width: 100%; /* Занимаем всю ширину экрана */
+            max-width: 90%; /* Ограничение для больших экранов, но не слишком строгое */
+            padding: 20px; /* Минимальные отступы */
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .logo {
+            width: 100%; /* Логотип занимает всю доступную ширину */
+            max-width: 300px; /* Ограничение для больших экранов */
+            margin-bottom: 30px; /* Отступ снизу для логотипа */
+            border-radius: 10px;
+            object-fit: contain; /* Сохраняем пропорции изображения */
+        }
+
+        h1 {
+            font-size: 2.8rem; /* Очень крупный заголовок для трендового вида */
+            margin: 20px 0;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.6rem; /* Крупный текст, читаемый на всех устройствах */
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px; /* Большие размеры для кнопки, как в примерах */
+            background: #7a9254; /* Цвет салона */
+            color: white;
+            text-decoration: none;
+            font-size: 2rem; /* Крупная кнопка */
+            border-radius: 15px; /* Больший радиус для современного вида */
+            transition: 0.3s;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; /* Отступ снизу */
+        }
+
+        .btn:hover {
+            background: #668145; /* Темнее оттенок цвета салона */
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                max-width: 100%; /* Занимаем всю ширину на мобильных */
+            }
+
+            .logo {
+                max-width: 200px; /* Меньший логотип на мобильных */
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem; /* Уменьшаем заголовок на мобильных */
+            }
+
+            p {
+                font-size: 1.3rem; /* Уменьшаем текст на мобильных */
+            }
+
+            .btn {
+                padding: 14px 40px;
+                font-size: 1.6rem; /* Уменьшаем кнопку на мобильных */
+                border: 2px solid #ffffff;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="trava_logo.png" alt="Trava Beauty Bar Logo" class="logo">
+        <h1>Получите скидку 700 руб!</h1>
+        <p>Нажмите кнопку ниже, чтобы написать "Купон" в WhatsApp и получить скидку на первые посещения.</p>
+        <a href="https://wa.me/89383460201?text=Купон" class="btn" target="_blank">Получить скидку</a>
+    </div>
+    <script>
+        // Анимация кнопки при клике
+        document.querySelector('.btn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+
+        // Адаптация страницы при изменении размера окна
+        window.addEventListener('resize', () => {
+            const container = document.querySelector('.container');
+            container.style.maxWidth = window.innerWidth > 768 ? '90%' : '100%';
+        });
+    </script>
+</body>
+</html>
